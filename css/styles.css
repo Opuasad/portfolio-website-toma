@@ -376,6 +376,23 @@ img {
   background-color: transparent;
   color: var(--first-color-alt);
 }
+#email-button{
+  display: inline-flex;
+  align-items: center;
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 1rem;
+  font-size: medium;
+  border-radius: 8px;
+  
+}
+.color-blue{
+  color: hsl(207, 56%, 45%);
+}
+.color-red{
+  color: hsl(4, 71%, 50%);
+}
 
 /*==================== ABOUT ====================*/
 .about_img{
@@ -954,11 +971,14 @@ img {
     justify-self: center;
   }
   .about_container,
-  .skills_container,
   .project_container,
   .contact_container,
   .footer_container{
     grid-template-columns: repeat(2, 1fr);
+  }
+  .skills_container{
+    grid-template-columns: repeat(1, 1fr);
+  
   }
   #portfolio{
    text-align: center;

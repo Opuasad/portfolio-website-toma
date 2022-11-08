@@ -192,3 +192,46 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+/*====================email js ====================*/ 
+const contactForm = document.getElementById("contact-form"),
+    contactName = document.getElementById("contact-name"),
+    contactEmail = document.getElementById("contact-email"),
+    contactProject = document.getElementById("contact-project"),
+    contactMessage = document.getElementById("contact-message")
+
+
+const sendEmail = (e) =>{
+    e.preventDefault()
+    // check if the field has a value
+    if(contactName.value === '' || contactEmail.value === '' || contactProject.value ===''){
+        // add and remove color
+        contactMessage.classList.remove("color-blue")
+        contactMessage.classList.add("color-red")
+
+    //    show message
+    contactMessage.textContent = "write all input fields 📩 "
+    }else{
+        emailjs.sendForm('service_dyn8zeo','template_jz664ni','#contact-form','9jV9Q0taPVZRLKstz') 
+        .then(()=>{
+            // show message and add color
+            contactMessage.classList.add("color-blue")
+            contactMessage.textContent = "message sent ✔"
+            
+            // Remove message after five seconds
+            setTimeout (() =>{
+                contactMessage.textContent =''
+            }, 5000)
+        },(error)=>{
+            alert("OOPS! SOMETHING HAS FAILED.....",error)
+        })
+        // TO clear the input field
+        contactName.value = ''
+        contactEmail.value =''
+        contactProject.value = ''
+    }
+
+}
+
+contactForm.addEventListener("submit",sendEmail)
+    
+

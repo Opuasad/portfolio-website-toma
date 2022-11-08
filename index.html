@@ -846,31 +846,31 @@
                         </div>
                 
 
-            <form action="" class="contact_form container grid">
+            <form action="" class="contact_form container grid" id="contact-form">
                 <div class="contact_inputs grid">
                     <div class="contact_content">
                         <label for="" class="contact_lable">Name</label>
-                        <input type="text" class="contact_input">  
+                        <input type="text" name="user_name" class="contact_input"placeholder="write your names" id="contact-name">  
                       </div>
                       <div class="contact_content">
                         <label for="" class="contact_lable">Email</label>
-                        <input type="email" class="contact_input">  
+                        <input type="email" name="user_email" class="contact_input" placeholder="Enter your email" id="contact-email">  
                       </div>
                     </div>
-                    <div class="contact_content">
+                    <!-- <div class="contact_content">
                         <label for="" class="contact_lable">Project</label>
-                        <input type="text" class="contact_input">  
-                      </div>
+                        <input type="text" class="contact_input" placeholder="Enter your project name" id="contact-project">  
+                      </div> -->
                       <div class="contact_content">
-                        <label for="" class="contact_lable">Message</label>
-                         <textarea class="contact_input" name="" id="" cols="0" rows="7"></textarea>
+                        <label for="" class="contact_lable">Project</label>
+                         <textarea class="contact_input" name="user_project" id="contact-project" cols="0" rows="7"></textarea>
                       </div>
-
+                      <p class="contact__message" id="contact-message"></p>
                       <div>
-                        <a href="#" class="button button-flex">
+                        <button type="submit" class="button button-flex" id="email-button">
                             Send Message
                             <i class="fa-solid fa-message button_icon"></i>
-                        </a>
+                        </button>
                       </div>
             </form>
         </div>
@@ -918,7 +918,10 @@
         <a href="#" class="scrollup" id="scroll-up">
             <i class="fa-solid fa-arrow-up scrollup_icon"></i> 
         </a>
+        <!--==================== Email JS ====================-->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
 
+        </script>
         <!--==================== SWIPER JS ====================-->
         <script src="js/swiper-bundle.min.js"></script>
 
